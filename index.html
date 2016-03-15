@@ -36,6 +36,17 @@
         <script type="text/javascript" src="js/CBonusPanel.js"></script>
         <script type="text/javascript" src="js/CLedsBonus.js"></script>
 	<script type="text/javascript" src="js/CSlotLogic.js"></script>
+        <script type="text/javascript" src="/betable.js"></script>
+
+        <script type="text/javascript">
+            var betable = new Betable("GqZTwdUmyTJICGKrwTBZy3ntTSYBz6iu")
+            if (betable.authorized) {
+                console.log("Betable is authorized")
+            }
+            else{
+                betable.authorize("//localhost:8080/api/authorize", 'GqZTwdUmyTJICGKrwTBZy3ntTSYBz6iu')
+            }
+        </script>
         
         
     </head>

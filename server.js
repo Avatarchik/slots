@@ -2,7 +2,7 @@ var http = require('http')
   , https = require('https')
   , path = require('path')
   , fs = require('fs')
-  , redirect_uri = process.env.REDIRECT_URI || 'https://localhost:8888/api/authorize'
+  , redirect_uri = process.env.REDIRECT_URI || '//localhost:8080/api/authorize'
   , crypto = require('crypto')
   , url = require('url')
   , manifest = require(process.cwd() + '/manifest')
@@ -56,37 +56,6 @@ function getFile(localFolder, runningFolder, filePath,res,page404){
         }
     });
 };
-
-function getDemoToken(req, res){
-    var options = {
-        host: 'api.betable.com'
-    }
-    options.path = '/1.0/token'
-    options.method = 'POST'
-    options.header = {
-        'Authorization' : 'Basic ' + new Buffer(client_id+':'+client_secret).toString('base64')
-    ,    'Content-Type' : 'application/x-www-form-urlencoded'
-    }
-    var write = 'grant_type=client_credentials&redirect_uri='+redirect_uri+'&client_user_id='+client_id
-    var params = '&demoMode=true'
-
-    var apiRequest = https.request(options, function(apiRes){
-        var body = ''
-        apiRes.on('data', function(chunk){
-            body += chunk
-        })
-        apiRes.on('end', function(){
-            var data = JSON.parse(body)
-            res.writeHead(302, {
-                'Location' : '/?accessToken='+data.access_token+params
-            })
-            res.end()
-        })
-    })
-
-    apiRequest.write(write)
-    apiRequest.end()
-};
  
 //a helper function to handle HTTP requests
 function requestHandler(req, res) {
@@ -98,11 +67,6 @@ function requestHandler(req, res) {
       , localFolder = __dirname + '/'
       , runningFolder = process.cwd() + '/'
       , page404 = localFolder + '404.html'
-
-    if (!path.search('demoMode')) {
-        getDemoToken(req, res)
-        return
-    };
 
 
     if (!path.search('/test')) {
@@ -187,7 +151,7 @@ function requestHandler(req, res) {
  
 //step 2) create the server
 var server
-  , port = manifest.port || '8888'
+  , port = manifest.port || '8080'
 if  (manifest.secure) {
     var options = {
         key: fs.readFileSync(__dirname + '/dummy.key'),
