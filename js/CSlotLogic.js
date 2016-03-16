@@ -5,11 +5,14 @@ var NUM_REELS = 5;
 var _aFinalSymbols = new Array();
 var _aRandSymbols = new Array();
 _aRandSymbols = _initSymbolsOccurence();
+var _betablePaylineCombo = new Array();
+_betablePaylineCombo = _initBetablePaylines();
 var _aPaylineCombo = new Array();
 _aPaylineCombo = _initPaylines();
 var _aSymbolWin = new Array();
 _aSymbolWin = _initSymbolWin();
 var _iNumSymbolFreeSpin = 0;
+var slotResults = new Array();
 
 s_aSession["bBonus"] = 0;
     
@@ -66,6 +69,33 @@ function _setMinWin(){
 }
 
 function _onSpin(iNumBettingLines,iCoin,iCurBet){
+    //Create JSON data containing wager and paylines
+    var paylines = [];
+    for (var i = 0; i < iNumBettingLines; i++) {
+        paylines.push(_betablePaylineCombo[i])
+    }
+    var wage = iCurBet.toFixed(2).toString();
+    var economy = betable.demoMode ? 'sandbox' : 'real';
+    //Make a betable bet on the game
+    betable.bet("Q64CcNdTxMqJsF6EApIbKn", {
+        wager: wage
+        ,paylines: paylines
+        ,currency: 'GBP'
+        ,economy: economy
+    }, function(data){
+        slotResults = data.window
+
+        for (var i = slotResults.length - 1; i >= 0; i--) {
+            var slotRowResults = slotResults[i]
+            for (var j = slotRowResults.length - 1; j >= 0; j--) {
+                console.log(slotRowResults[j])
+            };
+        };
+
+    }, function(data){
+        alert("The following error has occured while making a bet: " +data.description)
+    });
+
     //CHECK IF iCurBet IS < DI iMoney OR THERE IS AN INVALID BET
     if(iCurBet > s_aSession["iMoney"]){
         _dieError("INVALID BET: "+iCurBet+",money:"+s_aSession["iMoney"]);
@@ -183,6 +213,35 @@ function _onSpin(iNumBettingLines,iCoin,iCurBet){
             return "res=true&win=false&pattern="+JSON.stringify(_aFinalSymbols)+"&money="+s_aSession["iMoney"]+"&freespin="+s_aSession["iTotFreeSpin"]+"&bonus=false&bonus_prize=-1";
     }
 }
+
+function _initBetablePaylines(){
+    //STORE ALL INFO ABOUT BETABLE PAYLINES
+    //[1,1,1,1,1] is a horizontal line through the second row
+    //[0,1,2,3,4] is a diagonal line from top left to bottom right
+
+    _betablePaylineCombo[0] = [1,1,1,1,1];
+    _betablePaylineCombo[1] = [0,0,0,0,0];
+    _betablePaylineCombo[2] = [2,2,2,2,2];
+    _betablePaylineCombo[3] = [0,1,2,1,0];
+    _betablePaylineCombo[4] = [2,1,0,1,2];
+    _betablePaylineCombo[5] = [1,0,0,0,1];
+    _betablePaylineCombo[6] = [1,2,2,2,1];
+    _betablePaylineCombo[7] = [0,0,1,2,2];
+    _betablePaylineCombo[8] = [2,2,1,0,0];
+    _betablePaylineCombo[9] = [1,0,1,2,1];
+    _betablePaylineCombo[10] = [1,2,1,0,1];
+    _betablePaylineCombo[11] = [0,1,1,1,0];
+    _betablePaylineCombo[12] = [2,1,1,1,2];
+    _betablePaylineCombo[13] = [0,1,0,1,0];
+    _betablePaylineCombo[14] = [2,1,2,1,2];
+    _betablePaylineCombo[15] = [1,1,0,1,1];
+    _betablePaylineCombo[16] = [1,1,2,1,1];
+    _betablePaylineCombo[17] = [0,0,1,0,0];
+    _betablePaylineCombo[18] = [2,2,1,2,2];
+    _betablePaylineCombo[19] = [1,2,1,2,1];
+
+    return _betablePaylineCombo;
+};
 	
 function _initPaylines(){
     //STORE ALL INFO ABOUT PAYLINE COMBOS
