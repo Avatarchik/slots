@@ -8,7 +8,7 @@ function CPreloader(){
     
     this._init = function(){
        s_oSpriteLibrary.init( this._onImagesLoaded,this._onAllImagesLoaded, this );
-       s_oSpriteLibrary.addSprite("bg_menu","./sprites/bg_menu.jpg");
+       s_oSpriteLibrary.addSprite("bg_menu","./sprites/bg_menu.png");
        s_oSpriteLibrary.addSprite("progress_bar","./sprites/progress_bar.png");
        s_oSpriteLibrary.loadSprites();
        

@@ -56,7 +56,6 @@
                     betable.wallet(games, function(data){
                         if (betable.demoMode) {
                             walletResults = data.sandbox;
-                            console.log(walletResults)
                         }
                         else{
                             walletResults = data.real;
@@ -69,7 +68,7 @@
                             reel_delay: 6,            //NUMBER OF FRAMES TO DELAY THE REELS THAT START AFTER THE FIRST ONE
                             time_show_win:10000,       //DURATION IN MILLISECONDS OF THE WINNING COMBO SHOWING
                             time_show_all_wins: 2000, //DURATION IN MILLISECONDS OF ALL WINNING COMBO
-                            money:walletResults.balance,                //STARING CREDIT FOR THE USER
+                            money: walletResults.balance,                //STARING CREDIT FOR THE USER
                             freespin_occurrence: 0,   //IF USER MUST WIN, SET THIS VALUE FOR FREESPIN OCCURRENCE
                             bonus_occurrence:0,       //IF USER MUST WIN, SET THIS VALUE FOR BONUS OCCURRENCE
                             freespin_symbol_num_occur:[50,30,20],//WHEN PLAYER GET FREESPIN, THIS ARRAY GET THE OCCURRENCE OF RECEIVING 3,4 OR 5 FREESPIN SYMBOLS IN THE WHEEL

@@ -100,11 +100,11 @@ function CMain(oData){
 
         s_oSpriteLibrary.addSprite("but_bg","./sprites/but_play_bg.png");
         s_oSpriteLibrary.addSprite("but_exit","./sprites/but_exit.png");
-        s_oSpriteLibrary.addSprite("bg_menu","./sprites/bg_menu.jpg");
-        s_oSpriteLibrary.addSprite("bg_game","./sprites/bg_game.jpg");
-        s_oSpriteLibrary.addSprite("paytable1","./sprites/paytable1.jpg");
-        s_oSpriteLibrary.addSprite("paytable2","./sprites/paytable2.jpg");
-        s_oSpriteLibrary.addSprite("paytable3","./sprites/paytable3.jpg");
+        s_oSpriteLibrary.addSprite("bg_menu","./sprites/bg_menu.png");
+        s_oSpriteLibrary.addSprite("bg_game","./sprites/bg_game.png");
+        s_oSpriteLibrary.addSprite("paytable1","./sprites/paytable1.png");
+        s_oSpriteLibrary.addSprite("paytable2","./sprites/paytable2.png");
+        s_oSpriteLibrary.addSprite("paytable3","./sprites/paytable3.png");
         s_oSpriteLibrary.addSprite("mask_slot","./sprites/mask_slot.png");
         s_oSpriteLibrary.addSprite("spin_but","./sprites/but_spin_bg.png");
         s_oSpriteLibrary.addSprite("but_autospin","./sprites/but_autospin.png");
