@@ -273,7 +273,6 @@ function CGame(oData){
             for(var i=0;i<_aWinningLine.length;i++){
                 
                 if(_aWinningLine[i].line > 0){
-                    _oPayTable.highlightCombo(_aWinningLine[i].value,_aWinningLine[i].num_win);
                     _oInterface.showLine(_aWinningLine[i].line);
                 }
                 var aList = _aWinningLine[i].list;
@@ -475,6 +474,27 @@ function CGame(oData){
                 _oInterface.enableSpin();
         //}
     };
+
+    this.addLineMinus = function(){
+        if(_iLastLineActive === 1){
+            _iLastLineActive = NUM_PAYLINES;  
+        }else{
+            _iLastLineActive--;    
+        }
+        
+        var iNewTotalBet = _iCurBet * _iLastLineActive;
+
+        _iTotBet = iNewTotalBet;
+        _oInterface.refreshTotalBet(_iTotBet);
+        _oInterface.refreshNumLines(_iLastLineActive);
+
+/*
+        if(iNewTotalBet>_iMoney){
+                _oInterface.disableSpin(_bAutoSpin);
+        }else{*/
+                _oInterface.enableSpin();
+        //}
+    };
     
     this.resetCoinBet = function(){
         _iCurCoinIndex = 0;
@@ -520,6 +540,30 @@ function CGame(oData){
         //}
 		
     };
+
+    this.changeCoinBetMinus = function(){
+        _iCurCoinIndex--;
+        if(_iCurCoinIndex < 0){
+            _iCurCoinIndex = COIN_BET.length-1;
+        }
+        var iNewBet = parseFloat(COIN_BET[_iCurCoinIndex]);
+        
+        var iNewTotalBet = iNewBet * _iLastLineActive;
+
+        _iCurBet = iNewBet;
+        _iCurBet = Math.floor(_iCurBet * 100)/100;
+        _iTotBet = iNewTotalBet;
+        _oInterface.refreshBet(_iCurBet);
+        _oInterface.refreshTotalBet(_iTotBet);       
+        
+        /*
+        if(iNewTotalBet>_iMoney){
+                _oInterface.disableSpin(_bAutoSpin);
+        }else{*/
+                _oInterface.enableSpin();
+        //}
+        
+    };
 	
     this.onMaxBet = function(){
         if(_iMoney < (MAX_BET*NUM_PAYLINES)){
@@ -547,8 +591,6 @@ function CGame(oData){
     };
     
     this.removeWinShowing = function(){
-        _oPayTable.resetHighlightCombo();
-        
         _oInterface.resetWin();
         
         for(var i=0;i<NUM_ROWS;i++){

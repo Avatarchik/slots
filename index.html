@@ -5,10 +5,8 @@
         <link rel="stylesheet" href="css/reset.css" type="text/css">
         <link rel="stylesheet" href="css/main.css" type="text/css">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui" />
-	<meta name="msapplication-tap-highlight" content="no"/>
-
+        <meta name="msapplication-tap-highlight" content="no"/>
         <script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
         <script type="text/javascript" src="js/createjs-2013.12.12.min.js"></script>
         <script type="text/javascript" src="js/ctl_utils.js"></script>
@@ -35,17 +33,15 @@
         <script type="text/javascript" src="js/CWheelBonus.js"></script>
         <script type="text/javascript" src="js/CBonusPanel.js"></script>
         <script type="text/javascript" src="js/CLedsBonus.js"></script>
-	<script type="text/javascript" src="js/CSlotLogic.js"></script>
+        <script type="text/javascript" src="js/CSlotLogic.js"></script>
         <script type="text/javascript" src="/betable.js"></script>
-
         <script type="text/javascript">
             var betable;
         </script>
-        
     </head>
     <body ondragstart="return false;" ondrop="return false;" >
-	<div style="position: fixed; background-color: transparent; top: 0px; left: 0px; width: 100%; height: 100%"></div>
-          <script>
+        <div style="position: fixed; background-color: transparent; top: 0px; left: 0px; width: 100%; height: 100%"></div>
+        <script>
             $(document).ready(function(){
                 betable = new Betable("GqZTwdUmyTJICGKrwTBZy3ntTSYBz6iu")
                 if (betable.authorized) {
@@ -126,9 +122,9 @@
                 else{
                     betable.authorize("//localhost:8080/api/authorize", 'GqZTwdUmyTJICGKrwTBZy3ntTSYBz6iu')
                 }
-           });
+            });
         </script>
-        <canvas id="canvas" class='ani_hack' width="1500" height="640"> </canvas>
+        <canvas id="canvas" class='ani_hack' width="1136" height="640"> </canvas>
         <div id="block_game" style="position: fixed; background-color: transparent; top: 0px; left: 0px; width: 100%; height: 100%; display:none"></div>
     </body>
 </html>

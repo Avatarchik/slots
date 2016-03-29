@@ -322,6 +322,11 @@ function _initSymbolsOccurence(){
     for(i=0;i<2;i++){
         _aRandSymbols.push(10);
     }
+
+    //OCCURENCE FOR SYMBOL 11
+    for(i=0;i<11;i++){
+        _aRandSymbols.push(11);
+    }
     
     return _aRandSymbols;
 };

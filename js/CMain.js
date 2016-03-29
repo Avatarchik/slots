@@ -108,12 +108,10 @@ function CMain(oData){
         s_oSpriteLibrary.addSprite("mask_slot","./sprites/mask_slot.png");
         s_oSpriteLibrary.addSprite("spin_but","./sprites/but_spin_bg.png");
         s_oSpriteLibrary.addSprite("but_autospin","./sprites/but_autospin.png");
-        s_oSpriteLibrary.addSprite("spin_bg","./sprites/spin_bg.png");
-        s_oSpriteLibrary.addSprite("coin_but","./sprites/but_coin_bg.png");
+        s_oSpriteLibrary.addSprite("plus_bg","./sprites/but_plus_bg.png");
+        s_oSpriteLibrary.addSprite("minus_bg","./sprites/but_minus_bg.png");
         s_oSpriteLibrary.addSprite("info_but","./sprites/but_info_bg.png");
-        s_oSpriteLibrary.addSprite("bet_but","./sprites/bet_but.png");
         s_oSpriteLibrary.addSprite("win_frame_anim","./sprites/win_frame_anim.png");
-        s_oSpriteLibrary.addSprite("but_lines_bg","./sprites/but_lines_bg.png");
         s_oSpriteLibrary.addSprite("but_maxbet_bg","./sprites/but_maxbet_bg.png");
         s_oSpriteLibrary.addSprite("audio_icon","./sprites/audio_icon.png");
         s_oSpriteLibrary.addSprite("msg_box","./sprites/msg_box.png");
@@ -126,10 +124,6 @@ function CMain(oData){
         for(var i=1;i<NUM_SYMBOLS+1;i++){
             s_oSpriteLibrary.addSprite("symbol_"+i,"./sprites/symbol_"+i+".png");
             s_oSpriteLibrary.addSprite("symbol_"+i+"_anim","./sprites/symbol_"+i+"_anim.png");
-        }
-        
-        for(var j=1;j<NUM_PAYLINES+1;j++){
-            s_oSpriteLibrary.addSprite("payline_"+j,"./sprites/payline_"+j+".png");
         }
         
         //LOAD BONUS SPRITES

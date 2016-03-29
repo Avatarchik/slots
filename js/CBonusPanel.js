@@ -33,7 +33,7 @@ function CBonusPanel(){
         _iCurAnim = _oLeds.getState();
         
         var oSprite = s_oSpriteLibrary.getSprite('but_spin_bonus');
-        _oSpinBut = new CTextButton(360 + (oSprite.width/2),490 ,oSprite,TEXT_SPIN,FONT_GAME,"#ffffff",40,_oContainer);  
+        _oSpinBut = new CTextButton(360 + (oSprite.width/2),490 ,oSprite,TEXT,FONT_GAME,"#ffffff",40,_oContainer);  
         _oSpinBut.addEventListener(ON_MOUSE_UP, this._onSpin, this);
         
         var oTextHelpStroke = new createjs.Text(TEXT_BONUS_HELP,"bold 56px "+FONT_GAME, "#000");
