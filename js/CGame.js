@@ -572,7 +572,7 @@ function CGame(oData){
         }
         
         var iNewBet = MAX_BET;
-	_iLastLineActive = NUM_PAYLINES;
+        _iLastLineActive = NUM_PAYLINES;
         
         var iNewTotalBet = iNewBet * _iLastLineActive;
 
@@ -632,7 +632,7 @@ function CGame(oData){
             }else{
                 _iTotBet = _iCurBet * _iLastLineActive;
             }
-            tryCallSpin(_iCurBet,_iTotBet,_iLastLineActive);
+            _onCallSpin(_iCurBet,_iTotBet,_iLastLineActive);
         }else{
             this.generateLosingPattern();
         }

@@ -55,10 +55,10 @@ function CPayTablePanel(){
         _oContainer.addChild(_oHitArea);
         
         //ATTACH ARROW
-        _oButArrowNext = new CGfxButton(CANVAS_WIDTH - 300,50,s_oSpriteLibrary.getSprite('but_arrow_next'),_oContainer);
+        _oButArrowNext = new CGfxButton(CANVAS_WIDTH - 300 - 91,50,s_oSpriteLibrary.getSprite('but_arrow_next'),_oContainer);
         _oButArrowNext.addEventListener(ON_MOUSE_UP, this._onNext, this);
         
-        _oButArrowPrev = new CGfxButton(300,50,s_oSpriteLibrary.getSprite('but_arrow_prev'),_oContainer);
+        _oButArrowPrev = new CGfxButton(300 - 91,50,s_oSpriteLibrary.getSprite('but_arrow_prev'),_oContainer);
         _oButArrowPrev.addEventListener(ON_MOUSE_UP, this._onPrev, this);
     };
     

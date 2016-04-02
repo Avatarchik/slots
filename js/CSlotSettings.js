@@ -34,17 +34,17 @@ function CSlotSettings(){
         s_aPaylineCombo[6] = [{row:1,col:0},{row:2,col:1},{row:2,col:2},{row:2,col:3},{row:1,col:4}];
         s_aPaylineCombo[7] = [{row:0,col:0},{row:0,col:1},{row:1,col:2},{row:2,col:3},{row:2,col:4}];
         s_aPaylineCombo[8] = [{row:2,col:0},{row:2,col:1},{row:1,col:2},{row:0,col:3},{row:0,col:4}];
-        s_aPaylineCombo[9] = [{row:1,col:0},{row:2,col:1},{row:1,col:2},{row:0,col:3},{row:1,col:4}];
-        s_aPaylineCombo[10] = [{row:2,col:0},{row:0,col:1},{row:1,col:2},{row:2,col:3},{row:1,col:4}];
+        s_aPaylineCombo[9] = [{row:1,col:0},{row:0,col:1},{row:1,col:2},{row:2,col:3},{row:1,col:4}];
+        s_aPaylineCombo[10] = [{row:1,col:0},{row:2,col:1},{row:1,col:2},{row:0,col:3},{row:1,col:4}];
         s_aPaylineCombo[11] = [{row:0,col:0},{row:1,col:1},{row:1,col:2},{row:1,col:3},{row:0,col:4}];
         s_aPaylineCombo[12] = [{row:2,col:0},{row:1,col:1},{row:1,col:2},{row:1,col:3},{row:2,col:4}];
         s_aPaylineCombo[13] = [{row:0,col:0},{row:1,col:1},{row:0,col:2},{row:1,col:3},{row:0,col:4}];
         s_aPaylineCombo[14] = [{row:2,col:0},{row:1,col:1},{row:2,col:2},{row:1,col:3},{row:2,col:4}];
         s_aPaylineCombo[15] = [{row:1,col:0},{row:1,col:1},{row:0,col:2},{row:1,col:3},{row:1,col:4}];
         s_aPaylineCombo[16] = [{row:1,col:0},{row:1,col:1},{row:2,col:2},{row:1,col:3},{row:1,col:4}];
-        s_aPaylineCombo[17] = [{row:0,col:0},{row:0,col:1},{row:2,col:2},{row:0,col:3},{row:0,col:4}];
-        s_aPaylineCombo[18] = [{row:2,col:0},{row:2,col:1},{row:0,col:2},{row:2,col:3},{row:2,col:4}];
-        s_aPaylineCombo[19] = [{row:0,col:0},{row:2,col:1},{row:2,col:2},{row:2,col:3},{row:0,col:4}];
+        s_aPaylineCombo[17] = [{row:0,col:0},{row:0,col:1},{row:1,col:2},{row:0,col:3},{row:0,col:4}];
+        s_aPaylineCombo[18] = [{row:2,col:0},{row:2,col:1},{row:1,col:2},{row:2,col:3},{row:2,col:4}];
+        s_aPaylineCombo[19] = [{row:1,col:0},{row:2,col:1},{row:1,col:2},{row:2,col:3},{row:1,col:4}];
 
     };
     
@@ -116,7 +116,7 @@ function CSlotSettings(){
             s_aRandSymbols.push(7);
         }
         
-        //OCCURENCE FOR SYMBOL WILD
+        //OCCURENCE FOR SYMBOL 8
         for(i=0;i<1;i++){
             s_aRandSymbols.push(8);
         }
@@ -131,7 +131,7 @@ function CSlotSettings(){
             s_aRandSymbols.push(10);
         }
 
-        //OCCURENCE FOR SYMBOL 11
+        //OCCURENCE FOR SYMBOL WILD
         for(i=0;i<6;i++){
             s_aRandSymbols.push(11);
         }

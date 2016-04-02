@@ -48,7 +48,9 @@
                     //Begin game
                     var oMain;
                     var walletResults;
-                    var games = ["Q64CcNdTxMqJsF6EApIbKn"];
+                    var games = [];
+                    //var games = ["Q64CcNdTxMqJsF6EApIbKn"];
+                    
                     betable.wallet(games, function(data){
                         if (betable.demoMode) {
                             walletResults = data.sandbox;
@@ -59,7 +61,7 @@
 
                         oMain = new CMain({
                             win_occurrence:0,       //WIN PERCENTAGE.SET A VALUE FROM 0 TO 100.
-                            slot_cash: walletResults.balance*2,          //THIS IS THE CURRENT SLOT CASH AMOUNT. THE GAME CHECKS IF THERE IS AVAILABLE CASH FOR WINNINGS.
+                            slot_cash: walletResults.balance,          //THIS IS THE CURRENT SLOT CASH AMOUNT. THE GAME CHECKS IF THERE IS AVAILABLE CASH FOR WINNINGS.
                             min_reel_loop:0,          //NUMBER OF REEL LOOPS BEFORE SLOT STOPS  
                             reel_delay: 6,            //NUMBER OF FRAMES TO DELAY THE REELS THAT START AFTER THE FIRST ONE
                             time_show_win:10000,       //DURATION IN MILLISECONDS OF THE WINNING COMBO SHOWING
